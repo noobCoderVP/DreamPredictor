@@ -1,13 +1,366 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    animation: scaleit 1s ease-in-out 0.5s;
+    overflow: hidden;
+}
+
+@keyframes scaleit {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+/* header */
+header {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 1rem;
+    align-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    background-color: orangered;
+    animation: slidedown 2s linear 0.5s;
+}
+
+header button {
+    font-size: 1.2rem;
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    animation: rotate 2s linear 0.5s;
+}
+
+header img {
+    width: 4rem;
+    border: 2px solid white;
+}
+
+header h1 {
+    font-family: "Raleway";
+    font-weight: bold;
+    margin-right: auto;
+}
+
+header button:hover {
+    background-color: blue;
+    color: white;
+    box-shadow: 0px 5px 5px 0px whitesmoke;
+}
+
+.layout {
+    display: flex;
+    justify-items: center;
+    align-content: center;
+}
+
+/* aside */
+aside ul {
+    margin: 1px;
+    background-color: azure;
+    border: 1px solid black;
+    height: 83vh;
+    display: flex;
+    flex-direction: column;
+    animation: slidein 2s linear 0.5s;
+    background-color: red;
+    padding: 0 1rem;
+}
+
+aside li {
+    list-style-type: none;
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    color: lightgoldenrodyellow;
+    transition: all 0.4s;
+}
+
+aside li:hover {
+    background-color: rgb(255, 80, 80);
+}
+
+aside a {
+    text-decoration: none;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slidedown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.main {
+    position: relative;
+    flex-grow: 1;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: orangered;
+    color: whitesmoke;
+    padding: 0.25rem;
+    letter-spacing: 0.15rem;
+    font-family: "andita";
+    word-spacing: 0.5rem;
+    animation: slidein 2s linear 0.5s;
+}
+
+footer span {
+    font-family: "raleway";
+    font-weight: 600;
+}
+
+/* main */
+main {
+    height: 400px;
+    background-color: transparent;
+    overflow-y: auto;
+    animation: fadein 2s linear 0s;
+    scroll-behavior: smooth;
+}
+
+main::-webkit-scrollbar {
+    width: 10px; /* width of the entire scrollbar */
+}
+
+main::-webkit-scrollbar-track {
+    background: white; /* color of the tracking area */
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: red; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 2px solid white; /* creates padding around scroll thumb */
+}
+.main {
+    background-color: rgb(58, 58, 58);
+    background-image: url("./assets/background2.jfif");
+    background-size: cover;
+    position: relative;
+    background-attachment: local;
+}
+
+main h2 {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: max-content;
+    margin: auto;
+    padding: 0.5rem;
+    font-family: "Roboto";
+}
+
+/* register and login */
+main form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: max-content;
+    padding: 1rem;
+    background-color: black;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    box-shadow: 5px 5px 10px 0px whitesmoke, -5px -5px 10px 0px whitesmoke;
+}
+
+form input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin: 0.5rem;
+    color: white;
+    padding: 0.25rem;
+    min-width: 200px;
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border-bottom: 1px solid aqua;
+}
+
+input::placeholder {
+    font-size: 1.1rem;
+    padding: 0.2rem;
+}
+
+input:focus::placeholder {
+    color: rgb(0, 158, 158);
+}
+
+form button {
+    margin: auto;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    font-family: "times new roman";
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: rgb(192, 192, 192);
+    border: 2px solid whitesmoke;
+}
+
+/* contact */
+textarea {
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    color: white;
+    height: 40px;
+}
+
+textarea:focus {
+    border-bottom: 1px solid aqua;
+}
+
+/* home */
+section img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+section:first-of-type {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+    color: black;
+}
+section div {
+    background-color: rgba(240, 128, 128, 0.85);
+    padding: 1rem;
+    border-radius: 5px;
+}
+section h3 {
+    font-family: "andika";
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem 0rem;
+}
+section p {
+    letter-spacing: 0.06rem;
+    word-spacing: 0.2rem;
+}
+section p::first-letter {
+    font-family: "times new roman";
+    font-size: 2rem;
+    font-weight: bold;
+}
+.about {
+    background-color: rgba(0, 0, 0, 0.608);
+    display: block;
+    color: aliceblue;
+    padding: 1rem;
+    margin-top: 100px;
+}
+
+/* cards */
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards div {
+    width: 200px;
+    background-color: aliceblue;
+}
+.cards div h3 {
+    color: brown;
+}
+
+.statistics {
+    margin-top: 100px;
+}
+
+.newcards {
+    background-color: transparent;
+}
+
+.statistics > div {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.statistics > div div {
+    background-color: grey;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 150px;
+    height: 150px;
+}
+
+.statistics > div div span {
+    font-size: 2rem;
+}
+
+.active {
+    background-color: white;
+}
+
+.active li {
+    color: red;
 }

@@ -2,11 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 function Contact() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const submitHandler = data => console.log(data.images[0]);
     return (

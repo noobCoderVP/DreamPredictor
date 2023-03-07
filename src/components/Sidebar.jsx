@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
 import { MdOnlinePrediction } from "react-icons/md";
 import { IoMdContact } from "react-icons/io";
 import { AiFillProfile } from "react-icons/ai";
-import { FiLogOut, FiLogIn } from "react-icons/fi";
+import { FiLogIn } from "react-icons/fi";
 
 function Sidebar() {
-    const [logged, setlogged] = useState(localStorage.getItem("dream"));
     return (
         <aside>
             <ul>
@@ -44,17 +43,8 @@ function Sidebar() {
                 </NavLink>
                 <NavLink className="logout" to="/login">
                     <li>
-                        {logged ? (
-                            <>
-                                <FiLogOut />
-                                <span>LogOut</span>
-                            </>
-                        ) : (
-                            <>
-                                <FiLogIn />
-                                <span>LogIn</span>
-                            </>
-                        )}
+                        <FiLogIn />
+                        <span>LogIn</span>
                     </li>
                 </NavLink>
             </ul>

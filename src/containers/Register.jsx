@@ -62,6 +62,7 @@ function Register() {
                 />
                 <button type="submit">Register</button>
             </form>
+            {valid ? <></> : <></>}
         </main>
     );
 }

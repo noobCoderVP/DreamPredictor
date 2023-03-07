@@ -4,11 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const [valid, setvalid] = useState(1);
     const navigate = useNavigate();
@@ -48,6 +44,7 @@ function Login() {
                     Login
                 </button>
             </form>
+            {valid ? <></> : <></>}
         </main>
     );
 }
